@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "96013872-ab6c-418a-aa0a-83e82359a330",
+		"name": "Instituto microservicio-alumno",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20788164"
+	},
+	"item": [
+		{
+			"name": "listado",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "buscar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/alumnos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"alumnos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombres\": \"Segundo Hadson\",\n    \"apellidos\": \"Paredes Cordova\",\n    \"fechaNacimiento\": \"1991-06-30\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/alumnos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"alumnos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombres\": \"Segundo Hadson\",\n    \"apellidos\": \"Paredes Cordova\",\n    \"fechaNacimiento\": \"1991-06-30\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/alumnos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"alumnos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
