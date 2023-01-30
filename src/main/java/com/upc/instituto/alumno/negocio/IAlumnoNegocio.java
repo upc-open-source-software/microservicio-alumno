@@ -9,5 +9,5 @@ public interface IAlumnoNegocio {
     public Alumno buscar(Long codigo) throws Exception;
     public List<Alumno> listado();
     public Alumno actualizar(Alumno alumno) throws Exception;
-
+    public void eliminar(Long codigo) throws Exception;
 }

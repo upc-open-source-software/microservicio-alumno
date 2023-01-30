@@ -20,7 +20,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/alumnos/2",
+					"raw": "http://localhost:8081/api/alumnos/4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -29,7 +29,7 @@
 					"path": [
 						"api",
 						"alumnos",
-						"2"
+						"4"
 					]
 				}
 			},
@@ -89,6 +89,27 @@
 						"api",
 						"alumnos",
 						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/alumnos/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"alumnos",
+						"5"
 					]
 				}
 			},

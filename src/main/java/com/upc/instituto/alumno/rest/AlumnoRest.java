@@ -1,9 +1,13 @@
 package com.upc.instituto.alumno.rest;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,7 +47,21 @@ public class AlumnoRest {
 	
 	@PutMapping("/{id}")
 	public Alumno actualizar(@RequestBody Alumno alumno, @PathVariable("id") Long codigo) throws Exception {
-		alumno.setCodigo(codigo);
-		return this.alumnoNegocio.actualizar(alumno);
+		try {
+			alumno.setCodigo(codigo);
+			return this.alumnoNegocio.actualizar(alumno);
+		} catch (Exception e) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Alumno no existe en la base de datos", e);
+		}
+	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<?> eliminar(@PathVariable("id") Long codigo) throws Exception {
+		try {
+			this.alumnoNegocio.eliminar(codigo);
+			return ResponseEntity.noContent().build();
+		} catch (Exception e) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Alumno no existe en la base de datos", e);
+		}		
 	}
 }

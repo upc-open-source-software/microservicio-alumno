@@ -36,4 +36,9 @@ public class AlumnoNegocio implements IAlumnoNegocio {
 		return iAlumnoRepositorio.save(alumno);
 	}
 
+	@Override
+	public void eliminar(Long codigo) throws Exception {
+		this.buscar(codigo);
+		iAlumnoRepositorio.deleteById(codigo);
+	}
 }
