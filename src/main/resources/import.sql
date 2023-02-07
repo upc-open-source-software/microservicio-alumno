@@ -1,0 +1,2 @@
+INSERT INTO public.tbl_alumno(apellidos, celular, correo, direccion, fecha_nacimiento, fecha_registro, departamento_id, distrito_id, provincia_id, nombres) VALUES ('Lopez Aliaga', '966378345', 'lopezaliaga@gmail.com', 'Av Los Girasoles 123', '1989-01-01', '2023-03-06', 1, 1, 1, 'Juan');
+INSERT INTO public.tbl_alumno(apellidos, celular, correo, direccion, fecha_nacimiento, fecha_registro, departamento_id, distrito_id, provincia_id, nombres) VALUES ('Fernandez Pardo', '966378340', 'fpardo@gmail.com', 'Av Prolongacion 456', '1994-05-02', '2023-03-06', 1, 1, 1, 'Pedro');

@@ -1,16 +1,28 @@
 {
 	"info": {
-		"_postman_id": "96013872-ab6c-418a-aa0a-83e82359a330",
+		"_postman_id": "aeae06ac-2971-4b54-95b9-93f24f5a6240",
 		"name": "Instituto microservicio-alumno",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "20788164"
+		"_exporter_id": "6041738"
 	},
 	"item": [
 		{
 			"name": "listado",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/alumnos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"alumnos"
+					]
+				}
 			},
 			"response": []
 		},
@@ -20,7 +32,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/alumnos/4",
+					"raw": "http://localhost:8081/api/alumnos/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -29,7 +41,7 @@
 					"path": [
 						"api",
 						"alumnos",
-						"4"
+						"3"
 					]
 				}
 			},
@@ -42,7 +54,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"nombres\": \"Segundo Hadson\",\n    \"apellidos\": \"Paredes Cordova\",\n    \"fechaNacimiento\": \"1991-06-30\"\n}",
+					"raw": "{\n    \"nombres\": \"Segundo Hadson\",\n    \"apellidos\": \"Paredes Cordova\",\n    \"fechaNacimiento\": \"1991-06-30\",\n    \"direccion\": \"Av Heroes del Cenepa\",\n    \"celular\": \"966378345\",\n    \"correo\": \"hadsonsegundo@gmail.com\",\n    \"idDepartamento\": 1,\n    \"idProvincia\": 1,\n    \"idDistrito\": 1,\n    \"fechaRegistro\": \"2023-03-06T05:00:00.000+00:00\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -71,7 +83,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"nombres\": \"Segundo Hadson\",\n    \"apellidos\": \"Paredes Cordova\",\n    \"fechaNacimiento\": \"1991-06-30\"\n}",
+					"raw": "{\n    \"nombres\": \"Segundo Hadson\",\n    \"apellidos\": \"Paredes Cordova\",\n    \"fechaNacimiento\": \"1991-06-30\",\n    \"direccion\": \"Av Heroes del Cenepa 9000\",\n    \"celular\": \"966378345\",\n    \"correo\": \"hadsonsegundo@gmail.com\",\n    \"idDepartamento\": 1,\n    \"idProvincia\": 1,\n    \"idDistrito\": 1,\n    \"fechaRegistro\": \"2023-03-06T05:00:00.000+00:00\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -79,7 +91,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/alumnos/2",
+					"raw": "http://localhost:8081/api/alumnos/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -88,7 +100,7 @@
 					"path": [
 						"api",
 						"alumnos",
-						"2"
+						"3"
 					]
 				}
 			},
@@ -100,7 +112,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/alumnos/5",
+					"raw": "http://localhost:8081/api/alumnos/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -109,7 +121,7 @@
 					"path": [
 						"api",
 						"alumnos",
-						"5"
+						"1"
 					]
 				}
 			},
