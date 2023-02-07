@@ -126,6 +126,66 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "listado-departamentos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/departamentos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"departamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listado-provincias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/provincias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"provincias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listado-distritos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/distritos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"distritos"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

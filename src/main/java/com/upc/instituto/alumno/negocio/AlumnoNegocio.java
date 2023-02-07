@@ -13,7 +13,7 @@ public class AlumnoNegocio implements IAlumnoNegocio {
 
 	@Autowired
 	private IAlumnoRepositorio iAlumnoRepositorio;
-	
+
 	@Override
 	public Alumno registrar(Alumno alumno) {
 		return iAlumnoRepositorio.save(alumno);
@@ -21,8 +21,7 @@ public class AlumnoNegocio implements IAlumnoNegocio {
 
 	@Override
 	public Alumno buscar(Long codigo) throws Exception {
-		return iAlumnoRepositorio.findById(codigo).orElseThrow(
-				() -> new Exception("No se encontró la entidad"));
+		return iAlumnoRepositorio.findById(codigo).orElseThrow(() -> new Exception("No se encontró la entidad"));
 	}
 
 	@Override
