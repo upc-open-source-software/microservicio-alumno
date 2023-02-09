@@ -11,6 +11,9 @@ import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "TBL_ALUMNO")
@@ -20,34 +23,45 @@ public class Alumno {
 	@Column(name = "codigo")
 	private Long codigo;
 
-	@Column(name = "nombres")
+	@NotEmpty(message = "no puede estar vacío")
+	@Column(name = "nombres", nullable = false)
 	private String nombres;
 
-	@Column(name = "apellidos")
+	@NotEmpty(message = "no puede estar vacío")
+	@Column(name = "apellidos", nullable = false)
 	private String apellidos;
 
-	@Column(name = "fechaNacimiento")
+	@NotNull(message = "no puede estar vacío")
+	@Column(name = "fechaNacimiento", nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date fechaNacimiento;
 
+	@NotEmpty(message = "no puede estar vacío")
 	@Column(name = "direccion")
 	private String direccion;
 
+	@NotEmpty(message = "no puede estar vacío")
 	@Column(name = "celular")
 	private String celular;
 
+	@NotEmpty(message = "no puede estar vacío")
+	@Email(message = "no es una dirección de correo electrónico válido")
 	@Column(name = "correo")
 	private String correo;
 
+	@NotNull
 	@Column(name = "departamentoId")
 	private Long idDepartamento;
 
+	@NotNull
 	@Column(name = "provinciaId")
 	private Long idProvincia;
 
+	@NotNull
 	@Column(name = "distritoId")
 	private Long idDistrito;
 
+	@NotNull(message = "no puede estar vacío")
 	@Column(name = "fechaRegistro")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaRegistro;

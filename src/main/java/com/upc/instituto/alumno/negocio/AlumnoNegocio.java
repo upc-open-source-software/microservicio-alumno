@@ -1,6 +1,7 @@
 package com.upc.instituto.alumno.negocio;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,8 +21,8 @@ public class AlumnoNegocio implements IAlumnoNegocio {
 	}
 
 	@Override
-	public Alumno buscar(Long codigo) throws Exception {
-		return iAlumnoRepositorio.findById(codigo).orElseThrow(() -> new Exception("No se encontró la entidad"));
+	public Optional<Alumno> buscar(Long codigo) {
+		return iAlumnoRepositorio.findById(codigo);
 	}
 
 	@Override
@@ -30,14 +31,12 @@ public class AlumnoNegocio implements IAlumnoNegocio {
 	}
 
 	@Override
-	public Alumno actualizar(Alumno alumno) throws Exception {
-		this.buscar(alumno.getCodigo());
+	public Alumno actualizar(Alumno alumno) {
 		return iAlumnoRepositorio.save(alumno);
 	}
 
 	@Override
-	public void eliminar(Long codigo) throws Exception {
-		this.buscar(codigo);
+	public void eliminar(Long codigo) {
 		iAlumnoRepositorio.deleteById(codigo);
 	}
 }
