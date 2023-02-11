@@ -1,6 +1,11 @@
 INSERT INTO public.tbl_departamento(descripcion) VALUES ('LIMA');
+INSERT INTO public.tbl_departamento(descripcion) VALUES ('PIURA');
+INSERT INTO public.tbl_departamento(descripcion) VALUES ('CUZCO');
+INSERT INTO public.tbl_departamento(descripcion) VALUES ('PUNO');
 
 INSERT INTO public.tbl_provincia(descripcion) VALUES ('LIMA');
+INSERT INTO public.tbl_provincia(descripcion) VALUES ('PIURA');
+INSERT INTO public.tbl_provincia(descripcion) VALUES ('CUZCO');
 
 INSERT INTO public.tbl_distrito(descripcion) VALUES ('MIRAFLORES');
 INSERT INTO public.tbl_distrito(descripcion) VALUES ('SAN ISIDRO');
