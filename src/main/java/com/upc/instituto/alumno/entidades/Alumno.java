@@ -61,7 +61,6 @@ public class Alumno {
 	@Column(name = "distritoId")
 	private Long idDistrito;
 
-	@NotNull(message = "no puede estar vacío")
 	@Column(name = "fechaRegistro")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaRegistro;
