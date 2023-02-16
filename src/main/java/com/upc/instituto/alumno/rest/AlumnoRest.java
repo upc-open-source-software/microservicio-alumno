@@ -33,7 +33,7 @@ import com.upc.instituto.alumno.negocio.IAlumnoNegocio;
 @RequestMapping("/api/alumnos")
 @CrossOrigin(
 	origins = "http://localhost:4200", 
-	methods = { RequestMethod.GET, RequestMethod.POST }, 
+	methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE }, 
 	allowedHeaders = "*")
 public class AlumnoRest {
 	@Autowired
