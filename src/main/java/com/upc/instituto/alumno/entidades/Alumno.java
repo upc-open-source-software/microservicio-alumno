@@ -64,6 +64,31 @@ public class Alumno {
 	@Column(name = "fechaRegistro")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaRegistro;
+	
+	public Alumno() {
+		super();
+	}
+
+	public Alumno(Long codigo, @NotEmpty(message = "no puede estar vacío") String nombres,
+			@NotEmpty(message = "no puede estar vacío") String apellidos,
+			@NotNull(message = "no puede estar vacío") Date fechaNacimiento,
+			@NotEmpty(message = "no puede estar vacío") String direccion,
+			@NotEmpty(message = "no puede estar vacío") String celular,
+			@NotEmpty(message = "no puede estar vacío") @Email(message = "no es una dirección de correo electrónico válido") String correo,
+			@NotNull Long idDepartamento, @NotNull Long idProvincia, @NotNull Long idDistrito, Date fechaRegistro) {
+		super();
+		this.codigo = codigo;
+		this.nombres = nombres;
+		this.apellidos = apellidos;
+		this.fechaNacimiento = fechaNacimiento;
+		this.direccion = direccion;
+		this.celular = celular;
+		this.correo = correo;
+		this.idDepartamento = idDepartamento;
+		this.idProvincia = idProvincia;
+		this.idDistrito = idDistrito;
+		this.fechaRegistro = fechaRegistro;
+	}
 
 	@PrePersist
 	public void prePersist() {

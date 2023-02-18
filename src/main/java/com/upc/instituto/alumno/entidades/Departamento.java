@@ -18,6 +18,14 @@ public class Departamento {
 	@Column(name = "descripcion")
 	private String descripcion;
 
+	public Departamento() {
+	}
+
+	public Departamento(Long id, String descripcion) {
+		this.id = id;
+		this.descripcion = descripcion;
+	}
+
 	public Long getId() {
 		return id;
 	}
