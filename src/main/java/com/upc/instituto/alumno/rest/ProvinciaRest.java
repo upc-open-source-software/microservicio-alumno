@@ -13,7 +13,7 @@ import com.upc.instituto.alumno.entidades.Provincia;
 import com.upc.instituto.alumno.negocio.IProvinciaNegocio;
 
 @RestController
-@RequestMapping("/api/provincias")
+@RequestMapping("/api/provincia")
 @CrossOrigin(origins = "http://localhost:4200", methods= {RequestMethod.GET,RequestMethod.POST}, allowedHeaders = "*")
 public class ProvinciaRest {
 	 @Autowired

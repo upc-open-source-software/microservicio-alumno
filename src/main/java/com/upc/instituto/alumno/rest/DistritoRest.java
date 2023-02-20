@@ -13,7 +13,7 @@ import com.upc.instituto.alumno.entidades.Distrito;
 import com.upc.instituto.alumno.negocio.IDistritoNegocio;
 
 @RestController
-@RequestMapping("/api/distritos")
+@RequestMapping("/api/distrito")
 @CrossOrigin(origins = "http://localhost:4200", methods= {RequestMethod.GET,RequestMethod.POST}, allowedHeaders = "*")
 public class DistritoRest {
 	@Autowired
