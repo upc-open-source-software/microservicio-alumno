@@ -30,7 +30,7 @@ import com.upc.instituto.alumno.entidades.Alumno;
 import com.upc.instituto.alumno.negocio.IAlumnoNegocio;
 
 @RestController
-@RequestMapping("/api/alumno")
+@RequestMapping("/api/alumnos")
 @CrossOrigin(
 	origins = "http://localhost:4200", 
 	methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE }, 

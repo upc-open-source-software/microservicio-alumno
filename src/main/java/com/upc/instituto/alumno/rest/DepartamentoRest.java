@@ -13,7 +13,7 @@ import com.upc.instituto.alumno.entidades.Departamento;
 import com.upc.instituto.alumno.negocio.IDepartamentoNegocio;
 
 @RestController
-@RequestMapping("/api/departamento")
+@RequestMapping("/api/departamentos")
 @CrossOrigin(origins = "http://localhost:4200", methods= {RequestMethod.GET,RequestMethod.POST}, allowedHeaders = "*")
 public class DepartamentoRest {
 	@Autowired
