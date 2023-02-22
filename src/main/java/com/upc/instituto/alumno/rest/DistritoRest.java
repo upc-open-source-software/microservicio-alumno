@@ -14,7 +14,8 @@ import com.upc.instituto.alumno.negocio.IDistritoNegocio;
 
 @RestController
 @RequestMapping("/api/distritos")
-@CrossOrigin(origins = "http://localhost:4200", methods= {RequestMethod.GET,RequestMethod.POST}, allowedHeaders = "*")
+//@CrossOrigin(origins = "http://localhost:4200", methods= {RequestMethod.GET,RequestMethod.POST}, allowedHeaders = "*")
+@CrossOrigin("*")
 public class DistritoRest {
 	@Autowired
 	private IDistritoNegocio distritoNegocio;

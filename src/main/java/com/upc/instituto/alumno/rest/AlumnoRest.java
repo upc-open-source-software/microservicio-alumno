@@ -31,10 +31,12 @@ import com.upc.instituto.alumno.negocio.IAlumnoNegocio;
 
 @RestController
 @RequestMapping("/api/alumnos")
+/*
 @CrossOrigin(
 	origins = "http://localhost:4200", 
 	methods = { RequestMethod.GET, RequestMethod.POST }, 
-	allowedHeaders = "*")
+	allowedHeaders = "*")*/
+@CrossOrigin("*")
 public class AlumnoRest {
 	@Autowired
 	private IAlumnoNegocio alumnoNegocio;

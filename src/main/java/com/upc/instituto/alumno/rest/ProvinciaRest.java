@@ -14,7 +14,8 @@ import com.upc.instituto.alumno.negocio.IProvinciaNegocio;
 
 @RestController
 @RequestMapping("/api/provincias")
-@CrossOrigin(origins = "http://localhost:4200", methods= {RequestMethod.GET,RequestMethod.POST}, allowedHeaders = "*")
+//@CrossOrigin(origins = "http://localhost:4200", methods= {RequestMethod.GET,RequestMethod.POST}, allowedHeaders = "*")
+@CrossOrigin("*")
 public class ProvinciaRest {
 	 @Autowired
 	 private IProvinciaNegocio provinciaNegocio;
