@@ -18,6 +18,14 @@ public class Distrito {
 	@Column(name = "descripcion")
 	private String descripcion;
 
+	public Distrito() {
+	}
+
+	public Distrito(Long id, String descripcion) {
+		this.id = id;
+		this.descripcion = descripcion;
+	}
+
 	public Long getId() {
 		return id;
 	}

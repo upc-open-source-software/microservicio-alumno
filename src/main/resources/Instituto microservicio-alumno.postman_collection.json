@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/alumnos",
+					"raw": "http://localhost:8081/api/alumno",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -20,7 +20,7 @@
 					"port": "8081",
 					"path": [
 						"api",
-						"alumnos"
+						"alumno"
 					]
 				}
 			},
@@ -32,7 +32,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/alumnos/3",
+					"raw": "http://localhost:8081/api/alumno/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -40,8 +40,8 @@
 					"port": "8081",
 					"path": [
 						"api",
-						"alumnos",
-						"3"
+						"alumno",
+						"1"
 					]
 				}
 			},
@@ -54,7 +54,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"nombres\": \"Segundo Hadson\",\n    \"apellidos\": \"Paredes Cordova\",\n    \"fechaNacimiento\": \"1991-06-30\",\n    \"direccion\": \"Av Heroes del Cenepa\",\n    \"celular\": \"966378345\",\n    \"correo\": \"hadsonsegundo@gmail.com\",\n    \"idDepartamento\": 1,\n    \"idProvincia\": 1,\n    \"idDistrito\": 1,\n    \"fechaRegistro\": \"2023-03-06T05:00:00.000+00:00\"\n}",
+					"raw": "{\n    \"nombres\": \"Segundo Hadson\",\n    \"apellidos\": \"Paredes Cordova\",\n    \"fechaNacimiento\": \"1991-06-30\",\n    \"direccion\": \"Av Heroes del Cenepa\",\n    \"celular\": \"966378345\",\n    \"correo\": \"hadsonsegundo@gmail.com\",\n    \"idDepartamento\": 1,\n    \"idProvincia\": 1,\n    \"idDistrito\": 1\n    ,\n    \"fechaRegistro\": \"2023-03-06T05:00:00.000+00:00\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -62,7 +62,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/alumnos",
+					"raw": "http://localhost:8081/api/alumno",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -70,7 +70,7 @@
 					"port": "8081",
 					"path": [
 						"api",
-						"alumnos"
+						"alumno"
 					]
 				}
 			},
@@ -91,7 +91,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/alumnos/3",
+					"raw": "http://localhost:8081/api/alumno/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -99,8 +99,8 @@
 					"port": "8081",
 					"path": [
 						"api",
-						"alumnos",
-						"3"
+						"alumno",
+						"1"
 					]
 				}
 			},
@@ -112,7 +112,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/alumnos/1",
+					"raw": "http://localhost:8081/api/alumno/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -120,7 +120,7 @@
 					"port": "8081",
 					"path": [
 						"api",
-						"alumnos",
+						"alumno",
 						"1"
 					]
 				}
@@ -133,7 +133,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/departamentos",
+					"raw": "http://localhost:8081/api/departamento",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -141,7 +141,7 @@
 					"port": "8081",
 					"path": [
 						"api",
-						"departamentos"
+						"departamento"
 					]
 				}
 			},
@@ -153,7 +153,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/provincias",
+					"raw": "http://localhost:8081/api/provincia",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -161,7 +161,7 @@
 					"port": "8081",
 					"path": [
 						"api",
-						"provincias"
+						"provincia"
 					]
 				}
 			},
@@ -173,7 +173,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/distritos",
+					"raw": "http://localhost:8081/api/distrito",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -181,7 +181,7 @@
 					"port": "8081",
 					"path": [
 						"api",
-						"distritos"
+						"distrito"
 					]
 				}
 			},

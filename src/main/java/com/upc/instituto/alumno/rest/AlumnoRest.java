@@ -31,127 +31,123 @@ import com.upc.instituto.alumno.negocio.IAlumnoNegocio;
 
 @RestController
 @RequestMapping("/api/alumnos")
-/*
-@CrossOrigin(
-	origins = "http://localhost:4200", 
-	methods = { RequestMethod.GET, RequestMethod.POST }, 
-	allowedHeaders = "*")*/
 @CrossOrigin("*")
+
 public class AlumnoRest {
-	@Autowired
-	private IAlumnoNegocio alumnoNegocio;
+    @Autowired
+    private IAlumnoNegocio alumnoNegocio;
 
-	private Logger LOGGER = LoggerFactory.getLogger(AlumnoRest.class);
+    private Logger LOGGER = LoggerFactory.getLogger(AlumnoRest.class);
 
-	@GetMapping
-	public ResponseEntity<?> listado() {
-		Map<String, Object> response = new HashMap<>();
+    @GetMapping
+    public ResponseEntity<?> listado() {
+        Map<String, Object> response = new HashMap<>();
 
-		try {
-			return ResponseEntity.ok().body(this.alumnoNegocio.listado());
-		} catch (Exception e) {
-			LOGGER.error(e.getMessage(), e);
-			response.put("error", e.getMessage());
-			return ResponseEntity.internalServerError().body(response);
-		}
-	}
+        try {
+            return ResponseEntity.ok().body(this.alumnoNegocio.listado());
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            response.put("error", e.getMessage());
+            return ResponseEntity.internalServerError().body(response);
+        }
+    }
 
-	@PostMapping
-	public ResponseEntity<?> registrar(@Valid @RequestBody Alumno alumno, BindingResult result) {
-		Map<String, Object> response = new HashMap<>();
+    @PostMapping
+    public ResponseEntity<?> registrar(@Valid @RequestBody Alumno alumno, BindingResult result) {
+        Map<String, Object> response = new HashMap<>();
 
-		try {
-			if (result.hasErrors()) {
-				List<String> errores = result.getFieldErrors().stream()
-						.map(error -> "El campo '" + error.getField() + "' " + error.getDefaultMessage())
-						.collect(Collectors.toList());
-				response.put("errores", errores);
+        try {
+            if (result.hasErrors()) {
+                List<String> errores = result.getFieldErrors().stream()
+                        .map(error -> "El campo '" + error.getField() + "' " + error.getDefaultMessage())
+                        .collect(Collectors.toList());
+                response.put("errores", errores);
 
-				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
-			}
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+            }
 
-			return ResponseEntity.status(HttpStatus.CREATED).body(this.alumnoNegocio.registrar(alumno));
+            return ResponseEntity.status(HttpStatus.CREATED).body(this.alumnoNegocio.registrar(alumno));
 
-		} catch (Exception e) {
-			LOGGER.error(e.getMessage(), e);
-			response.put("error", e.getMessage());
-			return ResponseEntity.internalServerError().body(response);
-		}
-	}
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            response.put("error", e.getMessage());
+            return ResponseEntity.internalServerError().body(response);
+        }
+    }
 
-	@GetMapping("/{id}")
-	public ResponseEntity<?> buscar(@PathVariable("id") Long codigo) {
-		Map<String, Object> response = new HashMap<>();
+    @GetMapping("/{id}")
+    public ResponseEntity<?> buscar(@PathVariable("id") Long codigo) {
+        Map<String, Object> response = new HashMap<>();
 
-		try {
-			Optional<Alumno> optAlumno = this.alumnoNegocio.buscar(codigo);
-			if (optAlumno.isEmpty()) {
-				return ResponseEntity.notFound().build();
-			}
+        try {
+            Optional<Alumno> optAlumno = this.alumnoNegocio.buscar(codigo);
+            if (optAlumno.isEmpty()) {
+                return ResponseEntity.notFound().build();
+            }
 
-			return ResponseEntity.ok(optAlumno.get());
+            return ResponseEntity.ok(optAlumno.get());
 
-		} catch (Exception e) {
-			LOGGER.error(e.getMessage(), e);
-			response.put("error", e.getMessage());
-			return ResponseEntity.internalServerError().body(response);
-		}
-	}
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            response.put("error", e.getMessage());
+            return ResponseEntity.internalServerError().body(response);
+        }
+    }
 
-	@PutMapping("/{id}")
-	public ResponseEntity<?> actualizar(@Valid @RequestBody Alumno alumno, BindingResult result,
-			@PathVariable("id") Long codigo) throws Exception {
-		Map<String, Object> response = new HashMap<>();
-		try {
-			if (result.hasErrors()) {
-				List<String> errores = result.getFieldErrors().stream()
-						.map(error -> "el campo '" + error.getField() + "' " + error.getDefaultMessage())
-						.collect(Collectors.toList());
-				response.put("errores", errores);
-				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
-			}
+    @PutMapping("/{id}")
+    public ResponseEntity<?> actualizar(@Valid @RequestBody Alumno alumno, BindingResult result,
+                                        @PathVariable("id") Long codigo) throws Exception {
+        Map<String, Object> response = new HashMap<>();
+        try {
+            if (result.hasErrors()) {
+                List<String> errores = result.getFieldErrors().stream()
+                        .map(error -> "el campo '" + error.getField() + "' " + error.getDefaultMessage())
+                        .collect(Collectors.toList());
+                response.put("errores", errores);
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+            }
 
-			Optional<Alumno> optAlumno = alumnoNegocio.buscar(codigo);
-			if (optAlumno.isEmpty()) {
-				return ResponseEntity.notFound().build();
-			}
+            Optional<Alumno> optAlumno = alumnoNegocio.buscar(codigo);
+            if (optAlumno.isEmpty()) {
+                return ResponseEntity.notFound().build();
+            }
 
-			Alumno alumnoDB = optAlumno.get();
-			alumnoDB.setNombres(alumno.getNombres());
-			alumnoDB.setApellidos(alumno.getApellidos());
-			alumnoDB.setFechaNacimiento(alumno.getFechaNacimiento());
-			alumnoDB.setDireccion(alumno.getDireccion());
-			alumnoDB.setCelular(alumno.getCelular());
-			alumnoDB.setCorreo(alumno.getCorreo());
-			alumnoDB.setIdDepartamento(alumno.getIdDepartamento());
-			alumnoDB.setIdProvincia(alumno.getIdProvincia());
-			alumnoDB.setIdDistrito(alumno.getIdDistrito());
+            Alumno alumnoDB = optAlumno.get();
+            alumnoDB.setNombres(alumno.getNombres());
+            alumnoDB.setApellidos(alumno.getApellidos());
+            alumnoDB.setFechaNacimiento(alumno.getFechaNacimiento());
+            alumnoDB.setDireccion(alumno.getDireccion());
+            alumnoDB.setCelular(alumno.getCelular());
+            alumnoDB.setCorreo(alumno.getCorreo());
+            alumnoDB.setIdDepartamento(alumno.getIdDepartamento());
+            alumnoDB.setIdProvincia(alumno.getIdProvincia());
+            alumnoDB.setIdDistrito(alumno.getIdDistrito());
 
-			return ResponseEntity.status(HttpStatus.CREATED).body(this.alumnoNegocio.actualizar(alumnoDB));
+            return ResponseEntity.status(HttpStatus.CREATED).body(this.alumnoNegocio.actualizar(alumnoDB));
 
-		} catch (Exception e) {
-			LOGGER.error(e.getMessage(), e);
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Alumno no existe en la base de datos", e);
-		}
-	}
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Alumno no existe en la base de datos", e);
+        }
+    }
 
-	@DeleteMapping("/{id}")
-	public ResponseEntity<?> eliminar(@PathVariable("id") Long codigo) throws Exception {
-		Map<String, Object> response = new HashMap<>();
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> eliminar(@PathVariable("id") Long codigo) throws Exception {
+        Map<String, Object> response = new HashMap<>();
 
-		try {
-			Optional<Alumno> optAlumno = this.alumnoNegocio.buscar(codigo);
-			if (optAlumno.isEmpty()) {
-				return ResponseEntity.notFound().build();
-			}
+        try {
+            Optional<Alumno> optAlumno = this.alumnoNegocio.buscar(codigo);
+            if (optAlumno.isEmpty()) {
+                return ResponseEntity.notFound().build();
+            }
 
-			this.alumnoNegocio.eliminar(codigo);
-			return ResponseEntity.noContent().build();
+            this.alumnoNegocio.eliminar(codigo);
+            return ResponseEntity.noContent().build();
 
-		} catch (Exception e) {
-			LOGGER.error(e.getMessage(), e);
-			response.put("error", e.getMessage());
-			return ResponseEntity.internalServerError().body(response);
-		}
-	}
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+            response.put("error", e.getMessage());
+            return ResponseEntity.internalServerError().body(response);
+        }
+    }
 }
